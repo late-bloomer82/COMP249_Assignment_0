@@ -1,18 +1,34 @@
 public class Appliance {
  private String type;
  private String brand;
- final long serial_no;
+ private static long nextSerial= 1000000;
+ private final long serial_no;
  private double price;
  private static int count= 0;
 
  public Appliance(String type, String brand, double price) {
+  if (!isValidType(type)) throw new IllegalArgumentException("Invalid type");
+  if (price < 1) throw new IllegalArgumentException("Price must be at least $1");
   this.type = type;
   this.brand = brand;
-  this.serial_no = serial_no;
   this.price = price;
+  this.serial_no = nextSerial++;
   count++;
 
  }
+ private static final String[] VALID_TYPES = {
+         "Fridge", "Air Conditioner", "Washer", "Dryer",
+         "Freezer", "Stove", "Dishwasher", "Water Heaters", "Microwave"
+ };
+
+// Helper method to validate appliance type
+ private boolean isValidType(String type) {
+  for (String t : VALID_TYPES) {
+   if (t.equalsIgnoreCase(type)) return true;
+  }
+  return false;
+ }
+
 
  //Accessors
  public String getType() {
