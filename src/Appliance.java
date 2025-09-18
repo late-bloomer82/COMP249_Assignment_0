@@ -7,8 +7,8 @@ public class Appliance {
  private static int count= 0;
 
  public Appliance(String type, String brand, double price) {
-  if (!isValidType(type)) throw new IllegalArgumentException("Invalid type");
-  if (price < 1) throw new IllegalArgumentException("Price must be at least $1");
+  if (!isValidType(type)) throw new IllegalArgumentException("Invalid appliance type");
+  if (price < 1) throw new IllegalArgumentException("Price must be at least 1$");
   this.type = type;
   this.brand = brand;
   this.price = price;
@@ -24,13 +24,13 @@ public class Appliance {
 // Helper method to validate appliance type
  private boolean isValidType(String type) {
   for (String t : VALID_TYPES) {
-   if (t.equalsIgnoreCase(type)) return true;
+   if (t.equals(type)) return true;
   }
   return false;
  }
 
 
- //Accessors
+ // Accessors
  public String getType() {
   return this.type;
  }
@@ -47,8 +47,9 @@ public class Appliance {
   return this.price;
  }
 
- //Mutators
+ // Mutators
  public void setType(String type) {
+  if(!isValidType(type)){throw new IllegalArgumentException("Invalid appliance type");}
   this.type = type;
  }
 
@@ -57,10 +58,12 @@ public class Appliance {
  }
 
  public void setPrice(double price) {
+  if (price < 1) throw new IllegalArgumentException("Price must be at least 1$");
   this.price = price;
  }
 
- //Printing the object's information
+ // Printing the object's information
+ @Override
  public String toString() {
   return "Appliance [Type: " + type +
           ", Brand: " + brand +
@@ -72,7 +75,8 @@ public class Appliance {
  return count;
  }
 
- public boolean equals(Appliance other){
-  return this.type.equals(other.type) && this.brand.equals(other.brand) && this.price == other.price;
+
+ public boolean equals(Appliance obj){
+  return this.type.equals(obj.type) && this.brand.equals(obj.brand) && this.price == obj.price;
  }
 }
