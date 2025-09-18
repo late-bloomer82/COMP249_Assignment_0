@@ -5,7 +5,7 @@ public class Appliance {
  private double price;
  private static int count= 0;
 
- public Appliance(String type, String brand, long serial_no, double price) {
+ public Appliance(String type, String brand, double price) {
   this.type = type;
   this.brand = brand;
   this.serial_no = serial_no;
