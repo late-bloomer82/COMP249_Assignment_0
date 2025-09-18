@@ -1,8 +1,10 @@
 /**
  * -----------------------------------------------------
+ * COMP 249
  * Assignment 0
  * Question: Part 1
  * Written by: Ahmad-Radjai Cherifi, 40327936
+ * Due Date: September 19th
  * -----------------------------------------------------
  * This program defines an Appliance class for household appliances with the following attributes:
  * a unique serial number, type, brand and price.
