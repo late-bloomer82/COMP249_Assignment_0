@@ -81,10 +81,10 @@ public class Appliance {
  /** Printing the object's information */
  @Override
  public String toString() {
-  return "Appliance [Type: " + type +
-          ", Brand: " + brand +
-          ", Serial: " + serial_no +
-          ", Price: $" + price + "]";
+  return "Appliance Serial # " + serial_no + "\n" +
+          "Brand: " + brand + "\n" +
+          "Type: " + type + "\n" +
+          "Price: $" + price;
  }
 
 /** Static method to track number of created appliances */
