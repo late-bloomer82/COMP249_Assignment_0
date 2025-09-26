@@ -1,11 +1,17 @@
 import java.util.Scanner;
-
 /**
- * The Driver class runs the Appliance Store Management System.
- * It allows the store owner to add appliances, update appliances,
+ *  -----------------------------------------------------
+ * COMP 249
+ * Assignment 0
+ * Question: Part 2
+ * Written by: Ahmad-Radjai Cherifi, 40327936
+ * Due Date: September 19th
+ *  -----------------------------------------------------
+ * The Driver class allows the store owner to add appliances, update appliances,
  * search by brand, search by price, and quit the program.
  * Password protection is enforced with different rules depending on the option.
  */
+
 public class Driver {
 
     private static final String PASSWORD = "c249";
@@ -125,7 +131,9 @@ public class Driver {
             if (target == null) {
                 System.out.println("No appliance with serial number " + sn);
                 System.out.print("Try again? (y/n): ");
-                if (sc.next().equalsIgnoreCase("y")) continue;
+                if (sc.next().equalsIgnoreCase("y")) {
+                    continue;
+                }
                 else return;
             }
 
